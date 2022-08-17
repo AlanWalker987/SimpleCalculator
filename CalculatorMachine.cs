@@ -53,7 +53,7 @@ namespace SimpleCalculator
 
         private void startover()
         {
-            Console.WriteLine("You want to continue ? Press Y to continue else press any key to exit");
+            Console.WriteLine("You want to continue ? Press 'Y' to continue else press any key to exit");
             char YesorNo = char.Parse(Console.ReadLine());
             bool response = (YesorNo == 'Y' || YesorNo == 'y');
 
