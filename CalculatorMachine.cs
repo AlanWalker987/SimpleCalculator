@@ -37,12 +37,12 @@ namespace SimpleCalculator
                     break;
                 case '*':
                     result = firstNumber * secondNumber;
-                    Console.WriteLine($"Addition of {firstNumber} and {secondNumber} is {result}");
+                    Console.WriteLine($"Multiplication of {firstNumber} and {secondNumber} is {result}");
                     startover(); 
                     break;
                 case '/':
                     result = firstNumber / secondNumber;
-                    Console.WriteLine($"Addition of {firstNumber} and {secondNumber} is {result}");
+                    Console.WriteLine($"Division of {firstNumber} and {secondNumber} is {result}");
                     startover();
                     break;
                 default: Console.WriteLine("Invalid Operator. Please enter the valid operator");
@@ -71,14 +71,20 @@ namespace SimpleCalculator
         private void repeat()
         {
             firstNumber = result;
+            try
+            {
+                Console.WriteLine("Enter the second number");
+                secondNumber = double.Parse(Console.ReadLine());
 
-            Console.WriteLine("Enter the second number");
-            secondNumber = double.Parse(Console.ReadLine());
+                Console.WriteLine("Choose the Operation");
+                operation = char.Parse(Console.ReadLine());
 
-            Console.WriteLine("Choose the Operation");
-            operation = char.Parse(Console.ReadLine());
-
-            switching();
+                switching();
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
         }
 
         private void end()

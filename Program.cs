@@ -16,14 +16,24 @@ namespace SimpleCalculator
             Console.WriteLine("Enter First Number");
             double firstnum = double.Parse(Console.ReadLine());
 
-            Console.WriteLine("Enter Second Number");
-            double secondNum = double.Parse(Console.ReadLine());
+            try
+            {
+                Console.WriteLine("Enter Second Number");
+                double secondNum = double.Parse(Console.ReadLine());
+                Console.WriteLine("Choose the operation you want to perform - (+, -, *, /)");
+                char op = char.Parse(Console.ReadLine());
 
-            Console.WriteLine("Choose the operation you want to perform - (+, -, *, /)");
-            char op = char.Parse(Console.ReadLine());
+                CalculatorMachine cm = new CalculatorMachine(firstnum, secondNum, op);
+                Console.ReadKey();
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine(e.Message);
+                Console.ReadKey();
+            }
+           
 
-            CalculatorMachine cm = new CalculatorMachine(firstnum, secondNum, op);
-            Console.ReadKey();
+           
         }
     }
 
